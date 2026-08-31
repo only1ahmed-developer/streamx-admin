@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-base text-white;
+  }
+  ::selection {
+    @apply bg-cyan/30;
+  }
+}
+
+@layer components {
+  /* Signature element: a thin animated cyan→red gradient bar, used on
+     active nav items and stat cards — a nod to a live broadcast signal. */
+  .pulse-bar {
+    @apply h-[2px] w-full bg-gradient-to-r from-cyan via-accent to-cyan bg-[length:200%_100%] animate-pulseBar;
+  }
+  .card {
+    @apply bg-surface border border-border rounded-xl p-5;
+  }
+  .btn-primary {
+    @apply bg-accent hover:bg-accent/90 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm;
+  }
+  .btn-secondary {
+    @apply bg-surface2 hover:bg-surface2/80 border border-border text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm;
+  }
+  .input-field {
+    @apply bg-surface2 border border-border rounded-lg px-3 py-2 text-sm text-white placeholder-muted focus:outline-none focus:ring-2 focus:ring-cyan/50;
+  }
+}
